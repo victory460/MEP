@@ -206,7 +206,7 @@ export class UpdateFirmwarePage {
 
     //Need to use this lifestyle hook to make sure the slider exists before trying to get a reference to it
     ionViewDidEnter() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         if (swiperInstance == undefined) {
             setTimeout(() => {
                 this.ionViewDidEnter();
@@ -222,7 +222,7 @@ export class UpdateFirmwarePage {
         this.sendHexFile()
             .then(() => {
                 this.updateStatus = 'Updating firmware';
-                let swiperInstance: any = this.slider.getSlider();
+                let swiperInstance: any = this.slider;
                 swiperInstance.unlockSwipes();
                 this.slider.slideTo(1);
                 swiperInstance.lockSwipes();

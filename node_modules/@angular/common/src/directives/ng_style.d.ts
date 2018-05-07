@@ -23,7 +23,7 @@ import { DoCheck, ElementRef, KeyValueDiffers, Renderer } from '@angular/core';
  * @description
  *
  * The styles are updated according to the value of the expression evaluation:
- * - keys are style names with an option `.<unit>` suffix (ie 'top.px', 'font-style.em'),
+ * - keys are style names with an optional `.<unit>` suffix (ie 'top.px', 'font-style.em'),
  * - values are the values assigned to those properties (expressed in the given unit).
  *
  * @stable
@@ -32,6 +32,8 @@ export declare class NgStyle implements DoCheck {
     private _differs;
     private _ngEl;
     private _renderer;
+    private _ngStyle;
+    private _differ;
     constructor(_differs: KeyValueDiffers, _ngEl: ElementRef, _renderer: Renderer);
     ngStyle: {
         [key: string]: string;

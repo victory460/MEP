@@ -12,11 +12,18 @@ import { BodeModalPageModule } from '../pages/bode-modal/bode-modal.module';
 //Services
 import { CommandUtilityService } from '../services/device/command-utility.service';
 import { FileUploadModule } from "ng2-file-upload";
+import { IonicStorageModule } from '@ionic/storage';
+import { BrowserModule }from '@angular/platform-browser';
+import { HttpModule }from   '@angular/http';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 @NgModule({
     declarations: [
         MyApp,
     ],
     imports: [
+        HttpModule,
+        BrowserAnimationsModule,
+        BrowserModule,
         CoreModule,
         FileUploadModule,
         SettingsModule,
@@ -24,7 +31,8 @@ import { FileUploadModule } from "ng2-file-upload";
         DeviceManagerPageModule,
         BodePageModule,
         BodeModalPageModule,
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        IonicStorageModule.forRoot(),
     ],
     bootstrap: [IonicApp],
     entryComponents: [

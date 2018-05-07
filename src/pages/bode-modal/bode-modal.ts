@@ -38,7 +38,7 @@ export class BodeModalPage {
     }
 
     getSwiperInstance() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         if (swiperInstance == undefined) {
             setTimeout(() => {
                 this.getSwiperInstance();
@@ -65,7 +65,7 @@ export class BodeModalPage {
 
     toSlide(slideNum: number, noTransition?: boolean) {
         noTransition = noTransition == undefined ? false : noTransition;
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         if (noTransition) {
             this.slider.slideTo(slideNum, 0);

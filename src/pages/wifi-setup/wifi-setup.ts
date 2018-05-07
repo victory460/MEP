@@ -169,7 +169,7 @@ export class WifiSetupPage {
 
     //Need to use this lifestyle hook to make sure the slider exists before trying to get a reference to it
     ionViewDidEnter() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         if (swiperInstance == undefined) {
             setTimeout(() => {
                 this.ionViewDidEnter();
@@ -326,7 +326,7 @@ export class WifiSetupPage {
             signalStrength: 0
         };
         this.customNetworkConfig = true;
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         this.slider.slideTo(1);
         swiperInstance.lockSwipes();
@@ -610,7 +610,7 @@ export class WifiSetupPage {
         this.connectNow = true;
         this.selectedNetwork = network;
         this.wifiStatus = 'Ready';
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         this.slider.slideTo(1);
         swiperInstance.lockSwipes();
@@ -701,7 +701,7 @@ export class WifiSetupPage {
     }
 
     backToNetworks() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         this.slider.slideTo(0);
         swiperInstance.lockSwipes();

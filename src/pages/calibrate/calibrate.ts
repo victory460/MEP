@@ -55,7 +55,7 @@ export class CalibratePage {
 
     //Need to use this lifecycle hook to make sure the slider exists before trying to get a reference to it
     ionViewDidEnter() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         if (swiperInstance == undefined) {
             setTimeout(() => {
                 this.ionViewDidEnter();
@@ -110,7 +110,7 @@ export class CalibratePage {
 
     toSlide(slideNum: number, noTransition?: boolean) {
         noTransition = noTransition == undefined ? false : noTransition;
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         if (noTransition) {
             this.slider.slideTo(slideNum, 0);
@@ -122,7 +122,7 @@ export class CalibratePage {
     }
 
     toCalibrationSuccessPage() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         this.slider.slideTo(2);
         swiperInstance.lockSwipes();
@@ -313,7 +313,7 @@ export class CalibratePage {
     }
 
     toLoadExistingPage() {
-        let swiperInstance: any = this.slider.getSlider();
+        let swiperInstance: any = this.slider;
         swiperInstance.unlockSwipes();
         this.slider.slideTo(3, 0);
         swiperInstance.lockSwipes();

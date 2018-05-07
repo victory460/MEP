@@ -5,12 +5,16 @@
 
 .item-range .item-inner {
   overflow: visible;
+
+  width: 100%;
 }
 
 .item-range .input-wrapper {
   overflow: visible;
 
   flex-direction: column;
+
+  width: 100%;
 }
 
 .item-range ion-range {
